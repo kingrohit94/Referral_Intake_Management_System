@@ -1,0 +1,2117 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/15/2020 9:44:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ROHITASHWA-PC"
+  DTS:CreatorName="ROHITASHWA-PC\rcron"
+  DTS:DTSID="{E5E1C49A-8773-4C34-84EB-23CABB4C811B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Populating_Relational_DB"
+  DTS:PackageType="5"
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{F22E3B38-1199-4144-905C-D88B7B35EDE8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BHARDWAJS\ECE9017]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{456E55E5-6AEE-4D70-A761-0DB1C145B5FF}"
+      DTS:ObjectName="BHARDWAJS\ECE9017">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BHARDWAJS\ECE9017;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BHARDWAJS\ECE9017.RIMS]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{DB405C06-C925-43BE-BE34-964D3E9133C9}"
+      DTS:ObjectName="BHARDWAJS\ECE9017.RIMS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BHARDWAJS\ECE9017;Initial Catalog=RIMS;Integrated Security=True;Application Name=SSIS-Package-{DB405C06-C925-43BE-BE34-964D3E9133C9}BHARDWAJS\ECE9017.RIMS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BHARDWAJS\ECE9017.RIMS1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B328C2F5-5207-448A-B019-657404EE51B2}"
+      DTS:ObjectName="BHARDWAJS\ECE9017.RIMS1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BHARDWAJS\ECE9017;Initial Catalog=RIMS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BHARDWAJS\ECE9017.RIMS1 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FA4E90E2-CBC2-47DE-BF9E-00A9F2B6EA04}"
+      DTS:ObjectName="BHARDWAJS\ECE9017.RIMS1 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=BHARDWAJS\ECE9017;Initial Catalog=RIMS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QFJ79PF\ECE9017.RIMS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6BB2C42B-8800-47DA-9521-4DADE612B121}"
+      DTS:ObjectName="DESKTOP-QFJ79PF\ECE9017.RIMS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-QFJ79PF\ECE9017;Initial Catalog=RIMS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-QFJ79PF\ECE9017.RIMS1]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{077D1808-8C37-4311-894D-9733F483C7FA}"
+      DTS:ObjectName="DESKTOP-QFJ79PF\ECE9017.RIMS1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-QFJ79PF\ECE9017;Initial Catalog=RIMS;Integrated Security=True;Application Name=SSIS-Populating_Relational_DB-{077D1808-8C37-4311-894D-9733F483C7FA}DESKTOP-QFJ79PF\ECE9017.RIMS1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{28E6F74C-78AF-42F0-B1C3-7258081DBE35}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="K:\Western University\Advanced DataBases\Project\AD PROJECT\Referral_Intake_TestHealthData.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;ClientID&quot;"
+              DTS:DTSID="{31EA96F4-A717-4DE4-A5D5-5331101933AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;CreatedDateTime&quot;"
+              DTS:DTSID="{93250F23-2F49-4BD9-A477-06D252AA2130}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;FYear_Name&quot;"
+              DTS:DTSID="{FE5B1D34-C6C9-4B5A-B134-6B84D01334DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Work_OutsideDay&quot;"
+              DTS:DTSID="{F0198D1D-7A17-4036-9AE8-71EE336915ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;StatNew&quot;"
+              DTS:DTSID="{C9352118-20AA-4F67-BB64-1FE113F66EBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_NewStat&quot;"
+              DTS:DTSID="{AC75097B-A975-40E1-8A0E-C81A80C81D33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;FirstStatChange&quot;"
+              DTS:DTSID="{CC9FE0A1-164B-4320-A3C4-1031416B029F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_FirstStatChange&quot;"
+              DTS:DTSID="{61F5575B-AA55-4775-9DE0-8ED180ACDDB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_PSA_Review&quot;"
+              DTS:DTSID="{A65145D5-9A74-456A-82A2-E4F189DB87FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_PSA_Accepted&quot;"
+              DTS:DTSID="{5F239751-C5D1-4FB7-BE53-D62A37B3156B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_Triaged&quot;"
+              DTS:DTSID="{01E4EE19-D145-422E-A9D5-7BBFBA15D9A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_CC_Accepted&quot;"
+              DTS:DTSID="{7E7CCA44-2FFF-4D85-A7B9-907BECF17B0B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_Awaiting_CallBack&quot;"
+              DTS:DTSID="{A7680CC5-2B37-4D14-BF3A-36A375E0CCF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;StatCompleted&quot;"
+              DTS:DTSID="{11EE17DE-F332-4C6B-AD22-127AB461C243}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;CompletedDateTime&quot;"
+              DTS:DTSID="{E2CC49A4-E2C7-4253-A82C-521AEA41B6BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_Completed&quot;"
+              DTS:DTSID="{E9FC9B79-FFB0-4AC7-8D06-D6AEFA25EBBA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Patient&quot;"
+              DTS:DTSID="{9E5A75B1-5D30-41E0-AFD6-337600E95BC7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Priority&quot;"
+              DTS:DTSID="{08383A1A-44DD-4C4A-ACCC-A16714B81881}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Referral Category&quot;"
+              DTS:DTSID="{EE6BF1A7-66B1-4A0B-9FB0-9F7D3916FA2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Location&quot;"
+              DTS:DTSID="{6B7BA857-B866-4CCC-91B5-5655AE419961}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Completed UserID&quot;"
+              DTS:DTSID="{B7743C92-1619-4655-9A90-930B7E79AA1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;User Group Name&quot;"
+              DTS:DTSID="{114BB6E5-09E5-4AFC-8335-0FE76BB89C64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Completed_Work_OutsideDay&quot;"
+              DTS:DTSID="{CAC0617E-D2E1-4E21-B7B0-7D4DA4EE8E7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;1stStat_To_Triage_Hour&quot;"
+              DTS:DTSID="{E2C9750B-50FF-489A-B5FD-8696847E6E5F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;1stStat_To_Completed_Hour&quot;"
+              DTS:DTSID="{9560DE54-82B1-440F-9DEE-9402929008D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;TimeTo_Completed_Day&quot;"
+              DTS:DTSID="{6DC0B683-CADD-492B-9926-BBB2D105E286}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;LastStatChange&quot;"
+              DTS:DTSID="{EA76FC9A-F26B-4CAF-BEA9-9EFD578E76CE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{307F1284-894A-405D-9529-A105061B12C2}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\New folder\FlatFile.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClientID"
+              DTS:DTSID="{3F874FA2-08FE-4E75-9502-E794ED51E9CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreatedDateTime"
+              DTS:DTSID="{987F2177-0CFB-41C3-97A1-41FBA018466A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FYear_Name"
+              DTS:DTSID="{DF021956-0060-4E14-A532-F7EDCE0AD933}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Work_OutsideDay"
+              DTS:DTSID="{9407ACF1-189F-4992-A476-707E824C7013}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StatNew"
+              DTS:DTSID="{91C0AA56-E99A-490D-8241-0EFB44B210B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_NewStat"
+              DTS:DTSID="{FBF4A454-11F8-4153-9DC6-4F87D0A35F2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstStatChange"
+              DTS:DTSID="{3D0D5C21-9569-4E03-9768-1D4D1F114B01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_FirstStatChange"
+              DTS:DTSID="{288F6FC0-F65E-4790-806A-5F37F9FCE2A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_PSA_Review"
+              DTS:DTSID="{EEF0DE18-4D0B-4E4D-A83F-936AFDEEC106}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_PSA_Accepted"
+              DTS:DTSID="{1FCC7BA8-C5B7-4B9A-A157-78DDDDAAC70F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_Triaged"
+              DTS:DTSID="{7A1E98E4-7767-497A-BD11-23733B1A8A30}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_CC_Accepted"
+              DTS:DTSID="{1D306FD7-4191-4840-A7BB-7201BC3BABC4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_Awaiting_CallBack"
+              DTS:DTSID="{6FFB0AAF-316C-405C-A60D-BDA6A8F3F18B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StatCompleted"
+              DTS:DTSID="{930C216B-FE45-49B7-A038-189A3E50E8CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompletedDateTime"
+              DTS:DTSID="{8EE0B3A1-0C8E-4D72-9CB2-36A0F9ED0706}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_Completed"
+              DTS:DTSID="{54A6EA8E-B1D4-4640-A056-BB9CFC0376E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient"
+              DTS:DTSID="{9EBB2C43-AB6B-4A45-90A5-D9FD95E62E70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Priority"
+              DTS:DTSID="{C6348767-2E44-44F8-B741-5EBBBED40272}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Referral_Category"
+              DTS:DTSID="{4A7ED580-E22F-4DA6-BA35-F71766251A91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Location"
+              DTS:DTSID="{9E50A8B4-1B49-4AE7-87EA-99C4C618556D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed_UserID"
+              DTS:DTSID="{9D345F32-62CE-4138-B332-ADC0E3C631EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="User_Group_Name"
+              DTS:DTSID="{BF93CC48-B420-4B62-AB66-4C1E17575832}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Completed_Work_OutsideDay"
+              DTS:DTSID="{17723348-38D0-4321-B45E-2CA240964870}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_1stStat_To_Triage_Hour"
+              DTS:DTSID="{2DC180D6-95BD-4C75-8381-0FA002B88ECF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_1stStat_To_Completed_Hour"
+              DTS:DTSID="{5837508B-4A55-491D-B323-E8A184FA9F4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TimeTo_Completed_Day"
+              DTS:DTSID="{870F69D1-5542-4963-919A-B3131B1F4380}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastStatChange"
+              DTS:DTSID="{DF9DF4E6-3D18-4F32-B400-5F6FDB53C4C7}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Referral_Intake_TestHealthData.csv]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0997095A-93AA-41B9-90C0-9534B67E1847}"
+      DTS:ObjectName="Referral_Intake_TestHealthData.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="K:\Western University\Advanced DataBases\Project\AD PROJECT\Referral_Intake_TestHealthData.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[RIMS_PATIENT_PATIENTSTATUS]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="RIMS_PATIENT_PATIENTSTATUS"
+      DTS:DTSID="{83DC5FD3-BCE2-4607-BE57-D3E3C28A4713}"
+      DTS:ObjectName="RIMS_PATIENT_PATIENTSTATUS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="F:\AD PROJECT\sysobjects.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Patient_PatientStatusID"
+              DTS:DTSID="{CF6CBFA9-5511-4956-8CE3-2B6818F6569A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientID"
+              DTS:DTSID="{9D21276B-F813-46CF-9271-933B946ECCDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StatusID"
+              DTS:DTSID="{613C6E06-231A-448C-B4E6-56DDE3BA9F36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time_To_Status"
+              DTS:DTSID="{A8115BDD-991E-4CB5-99B7-CCD235C59C12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarkedCompletedByNurse"
+              DTS:DTSID="{7DD553C1-2FE6-4735-AB3D-235122086D19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarkedCompletedOnDate"
+              DTS:DTSID="{CE2F3438-0944-4C1A-9232-7B1E5FB67047}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MarkedCompletedOnTime"
+              DTS:DTSID="{D8D3D7E6-E873-41FC-8E64-B5DE16912578}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ROHITASHWA-PC\ECE9017.RIMS1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0A9E7AF1-5DF9-466A-96C9-ED8E1761D53D}"
+      DTS:ObjectName="ROHITASHWA-PC\ECE9017.RIMS1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ROHITASHWA-PC\ECE9017;Initial Catalog=RIMS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sysobjects.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{830D6E92-F55F-4144-BFC4-46728B95B74C}"
+      DTS:ObjectName="sysobjects.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="F:\AD PROJECT\sysobjects.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate_3NF_Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Populate_3NF_Tables"
+      DTS:DTSID="{68BA19C1-6A5E-4B94-8F47-92EEE04B3F36}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate_3NF_Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6BB2C42B-8800-47DA-9521-4DADE612B121}"
+          SQLTask:SqlStatementSource="exec dbo.Populate_3NF_Tables" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate_flat_file"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2CB54754-867C-41BB-8546-5C99AD418040}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate_flat_file"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate_flat_file\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Referral_Intake_TestHealthData"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate_flat_file\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-QFJ79PF\ECE9017.RIMS1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-QFJ79PF\ECE9017.RIMS1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ClientID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ClientID"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClientID]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[ClientID]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CreatedDateTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CreatedDateTime"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDateTime]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CreatedDateTime]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FYear_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FYear_Name"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FYear_Name]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FYear_Name]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Work_OutsideDay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Work_OutsideDay"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Work_OutsideDay]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Work_OutsideDay]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[StatNew]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StatNew"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StatNew]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatNew]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_NewStat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_NewStat"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_NewStat]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_NewStat]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FirstStatChange]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FirstStatChange"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstStatChange]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FirstStatChange]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_FirstStatChange]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_FirstStatChange"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_FirstStatChange]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_FirstStatChange]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_PSA_Review]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_PSA_Review"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_PSA_Review]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Review]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_PSA_Accepted]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_PSA_Accepted"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_PSA_Accepted]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Accepted]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_Triaged]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_Triaged"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Triaged]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Triaged]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_CC_Accepted]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_CC_Accepted"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_CC_Accepted]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_CC_Accepted]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_Awaiting_CallBack]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_Awaiting_CallBack"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Awaiting_CallBack]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Awaiting_CallBack]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[StatCompleted]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StatCompleted"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StatCompleted]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatCompleted]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CompletedDateTime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CompletedDateTime"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CompletedDateTime]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CompletedDateTime]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_Completed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_Completed"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Completed]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Patient]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Patient"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Patient]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Patient]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Priority]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Priority"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Priority]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Priority]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Referral_Category]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Referral_Category"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Referral_Category]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Referral_Category]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Location"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Location]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Location]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Completed_UserID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Completed_UserID"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Completed_UserID]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_UserID]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[User_Group_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="User_Group_Name"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[User_Group_Name]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[User_Group_Name]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Completed_Work_OutsideDay]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Completed_Work_OutsideDay"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Completed_Work_OutsideDay]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Work_OutsideDay]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[_1stStat_To_Triage_Hour]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_1stStat_To_Triage_Hour"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[_1stStat_To_Triage_Hour]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Triage_Hour]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[_1stStat_To_Completed_Hour]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="_1stStat_To_Completed_Hour"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[_1stStat_To_Completed_Hour]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Completed_Hour]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[TimeTo_Completed_Day]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TimeTo_Completed_Day"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Completed_Day]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed_Day]" />
+                    <inputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LastStatChange]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastStatChange"
+                      externalMetadataColumnId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastStatChange]"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[LastStatChange]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ClientID]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDateTime]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FYear_Name]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="FYear_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Work_OutsideDay]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Work_OutsideDay" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StatNew]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="StatNew" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_NewStat]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_NewStat" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FirstStatChange]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="FirstStatChange" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_FirstStatChange]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_FirstStatChange" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_PSA_Review]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_PSA_Review" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_PSA_Accepted]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_PSA_Accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Triaged]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_Triaged" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_CC_Accepted]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_CC_Accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Awaiting_CallBack]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_Awaiting_CallBack" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[StatCompleted]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="StatCompleted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CompletedDateTime]"
+                      dataType="dbTimeStamp"
+                      name="CompletedDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Completed]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_Completed" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Patient]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Patient" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Priority]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Priority" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Referral_Category]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Referral_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Location]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Completed_UserID]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Completed_UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[User_Group_Name]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="User_Group_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Completed_Work_OutsideDay]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="Completed_Work_OutsideDay" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[_1stStat_To_Triage_Hour]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="_1stStat_To_Triage_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[_1stStat_To_Completed_Hour]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="_1stStat_To_Completed_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeTo_Completed_Day]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="TimeTo_Completed_Day" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LastStatChange]"
+                      dataType="wstr"
+                      length="2147483647"
+                      name="LastStatChange" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate_flat_file\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate_flat_file\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate_flat_file\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate_flat_file\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate_flat_file\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate_flat_file\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[ClientID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ClientID]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[ClientID]"
+                      name="ClientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CreatedDateTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreatedDateTime]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CreatedDateTime]"
+                      name="CreatedDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FYear_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FYear_Name]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FYear_Name]"
+                      name="FYear_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Work_OutsideDay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Work_OutsideDay]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Work_OutsideDay]"
+                      name="Work_OutsideDay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatNew]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StatNew]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatNew]"
+                      name="StatNew"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_NewStat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_NewStat]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_NewStat]"
+                      name="TimeTo_NewStat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FirstStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstStatChange]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[FirstStatChange]"
+                      name="FirstStatChange"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_FirstStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_FirstStatChange]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_FirstStatChange]"
+                      name="TimeTo_FirstStatChange"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Review]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_PSA_Review]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Review]"
+                      name="TimeTo_PSA_Review"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Accepted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_PSA_Accepted]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_PSA_Accepted]"
+                      name="TimeTo_PSA_Accepted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Triaged]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Triaged]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Triaged]"
+                      name="TimeTo_Triaged"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_CC_Accepted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_CC_Accepted]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_CC_Accepted]"
+                      name="TimeTo_CC_Accepted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Awaiting_CallBack]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Awaiting_CallBack]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Awaiting_CallBack]"
+                      name="TimeTo_Awaiting_CallBack"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatCompleted]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StatCompleted]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[StatCompleted]"
+                      name="StatCompleted"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CompletedDateTime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompletedDateTime]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[CompletedDateTime]"
+                      name="CompletedDateTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Completed]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed]"
+                      name="TimeTo_Completed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Patient]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Patient]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Patient]"
+                      name="Patient"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Priority]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Priority]"
+                      name="Priority"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Referral_Category]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Referral_Category]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Referral_Category]"
+                      name="Referral_Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Location]"
+                      name="Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_UserID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_UserID]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_UserID]"
+                      name="Completed_UserID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[User_Group_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[User_Group_Name]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[User_Group_Name]"
+                      name="User_Group_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Work_OutsideDay]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Work_OutsideDay]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[Completed_Work_OutsideDay]"
+                      name="Completed_Work_OutsideDay"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Triage_Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_1stStat_To_Triage_Hour]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Triage_Hour]"
+                      name="_1stStat_To_Triage_Hour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Completed_Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_1stStat_To_Completed_Hour]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[_1stStat_To_Completed_Hour]"
+                      name="_1stStat_To_Completed_Hour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed_Day]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Completed_Day]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[TimeTo_Completed_Day]"
+                      name="TimeTo_Completed_Day"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[LastStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastStatChange]"
+                      length="50"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].Columns[LastStatChange]"
+                      name="LastStatChange"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ClientID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ClientID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreatedDateTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CreatedDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FYear_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FYear_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Work_OutsideDay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Work_OutsideDay" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StatNew]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StatNew" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_NewStat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_NewStat" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FirstStatChange" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_FirstStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_FirstStatChange" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_PSA_Review]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_PSA_Review" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_PSA_Accepted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_PSA_Accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Triaged]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_Triaged" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_CC_Accepted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_CC_Accepted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Awaiting_CallBack]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_Awaiting_CallBack" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StatCompleted]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StatCompleted" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CompletedDateTime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CompletedDateTime" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Completed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_Completed" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Patient]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Patient" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Priority]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Priority" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Referral_Category]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Referral_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_UserID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Completed_UserID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[User_Group_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="User_Group_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Completed_Work_OutsideDay]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Completed_Work_OutsideDay" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_1stStat_To_Triage_Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="_1stStat_To_Triage_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_1stStat_To_Completed_Hour]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="_1stStat_To_Completed_Hour" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[TimeTo_Completed_Day]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TimeTo_Completed_Day" />
+                    <externalMetadataColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastStatChange]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastStatChange" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate_flat_file.Paths[Flat File Source Output]"
+              endId="Package\Populate_flat_file\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Populate_flat_file\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EDB9C43E-028F-47BA-9FA2-ABB4786F1470}"
+      DTS:From="Package\Populate_flat_file"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Populate_3NF_Tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Populate_3NF_Tables"
+          TopLeft="113.777745441155,135.595960881654" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Populate_flat_file"
+          TopLeft="129.2878749202,36.8260608925868" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="208.032810180678,78.8260608925868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.7698999890672"
+              Start="0,0"
+              End="0,49.2698999890672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.2698999890672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate_flat_file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Populate_flat_file\Flat File Source"
+          TopLeft="412.8,39.2" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Populate_flat_file\ADO NET Destination"
+          TopLeft="395.2,204" />
+        <EdgeLayout
+          Id="Package\Populate_flat_file.Paths[Flat File Source Output]"
+          TopLeft="486.5,81.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,122.8"
+              Start="0,0"
+              End="0,115.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate_flat_file\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

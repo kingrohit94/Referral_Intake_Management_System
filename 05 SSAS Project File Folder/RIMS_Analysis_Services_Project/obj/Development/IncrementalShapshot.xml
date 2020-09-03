@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>RIMS_Analysis_Services_Project</Database>
+    <Server>DESKTOP-QFJ79PF\ECE9017</Server>
+    <ConnectionString>Data Source=DESKTOP-QFJ79PF\ECE9017;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>jNQrZmDVyvY9T+b0uKymk9FJeF4=4/19/2020 11:03:57 PM4/19/2020 11:03:57 PM</TimeStamp>
+        <ID>
+          <String>RIMS DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>4KjgK0jDPRzvT4IXzPWxV0we5/0=4/19/2020 11:04:54 PM4/19/2020 11:04:53 PM</TimeStamp>
+        <ID>
+          <String>RIMS DW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>1tapZVA6VtP7+V6HxmIYgOEs42c=4/19/2020 11:28:30 PM4/19/2020 11:05:56 PM</TimeStamp>
+        <ID>
+          <String>Dim Nurse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>r9wCx0gPWK9Yy10Q5V0lxAFiXXY=4/19/2020 11:27:23 PM4/19/2020 11:05:56 PM</TimeStamp>
+        <ID>
+          <String>Dim Department</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>iG6SO5C0I74qzonxMvTLQI6OL7Q=4/19/2020 11:26:46 PM4/19/2020 11:05:56 PM</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>AjsZ0eMU8Qrr5RAsoCgwZf6V7mE=4/19/2020 11:34:13 PM4/19/2020 11:34:13 PM</TimeStamp>
+        <ID>
+          <String>Dim Patient</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>lN5wx5IGPr9/3MxMKr4VItq0Lvo=4/19/2020 11:34:54 PM4/19/2020 11:34:13 PMAQt2zAatOTWSeFh0FDvDnndN4Ck=4/19/2020 11:34:13 PM4/19/2020 11:34:13 PM</TimeStamp>
+        <ID>
+          <String>RIMS DW</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>4oJu0cWstIqzC4JPCt1q5nILyMk=4/19/2020 11:02:39 PM4/19/2020 11:02:39 PM</TimeStamp>
+      <ID>
+        <String>RIMS_Analysis_Services_Project</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-04-20T03:35:47.753333Z</LastDeployed>
+</DeploymentSnapshot>

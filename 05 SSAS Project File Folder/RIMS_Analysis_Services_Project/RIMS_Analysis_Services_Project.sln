@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "RIMS_Analysis_Services_Project", "RIMS_Analysis_Services_Project.dwproj", "{D67F476F-004E-48FF-8DE3-97321DF2420F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D67F476F-004E-48FF-8DE3-97321DF2420F}.Development|Default.ActiveCfg = Development
+		{D67F476F-004E-48FF-8DE3-97321DF2420F}.Development|Default.Build.0 = Development
+		{D67F476F-004E-48FF-8DE3-97321DF2420F}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B85823A5-25CA-4F02-894B-E11C14EFF9DC}
+	EndGlobalSection
+EndGlobal
